@@ -1,6 +1,4 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
-
 function App() {
   const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState('');
@@ -9,17 +7,12 @@ function App() {
   const [newTitle, setNewTitle] = useState('');
   const [newContent, setNewContent] = useState('');
   const API = 'http://localhost:4000';
-
-
-
   useEffect(() => {
     fetch(`${API}/articles`)
       .then(res => res.json())
       .then(setPosts)
       .catch(console.error);
   }, []);
-
-
   const handleAdd = async () => {
     if (!title || !content) return;
     const res = await fetch(fetch(`${API}/articles`), {
@@ -34,8 +27,6 @@ function App() {
       setContent('');
     }
   };
-
-
   const startEdit = post => {
     setEditingId(post.id);
     setNewTitle(post.title);
