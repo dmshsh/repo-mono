@@ -1,0 +1,20 @@
+### 
+GET http://localhost:3000/articles 
+###
+POST http://localhost:3000/articles
+Content-Type: application/json
+
+{
+  "title": "New Article",
+  "content": "This is the content of the new article."
+}
+###
+PUT http://localhost:3000/articles/2
+Content-Type: application/json
+
+{
+  "newTitle": "Updated Article",
+  "newContent": "This is the updated content."
+}
+###
+DELETE http://localhost:3000/articles/2
